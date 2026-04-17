@@ -297,6 +297,34 @@ footer .note { margin-top:1.5rem; font-size:0.6rem; color:rgba(255,255,255,0.12)
 @media(max-width:600px) {
   .specs-grid,.lottery-grid,.design-grid { grid-template-columns:1fr; }
 }
+
+/* Hero video (v7) */
+.hero { position: relative; overflow: hidden; }
+.hero-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(6,14,26,0.2) 0%, rgba(6,14,26,0.5) 55%, rgba(6,14,26,0.85) 100%);
+  z-index: 1; pointer-events: none;
+}
+.hero-content, .hero .scroll-hint { position: relative; z-index: 2; }
+.hero-content { padding-top: 48vh; }
+.hero-sub {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  font-weight: 600;
+  margin: 0.5rem 0 1rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+@media (max-width: 768px) {
+  .hero-content { padding-top: 58vh; }
+  .hero-sub { letter-spacing: 0.15em; }
+}
 </style>
 </head>
 <body>
@@ -311,10 +339,11 @@ footer .note { margin-top:1.5rem; font-size:0.6rem; color:rgba(255,255,255,0.12)
 </div></nav>
 
 <section class="hero">
+  <video class="hero-video smart-loop" src="hero.mp4" autoplay muted playsinline preload="auto" data-loop-start="5.5" data-loop-end="7.9"></video>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="overline reveal">CORPORATE YEAR-END CELEBRATION</div>
-    <h1 class="reveal rd1">MEDTRONIC<br>WINTER GAMES</h1>
-    <div class="subtitle reveal rd2">美 敦 力 冬 季 運 動 會 ── 2026</div>
+    <div class="hero-sub display reveal rd2">WINTER&nbsp;GAMES&nbsp;·&nbsp;2026</div>
     <div class="info-bar reveal rd3">2026.12.18 Fri ｜ 18:00–21:00 ｜ 台北晶華酒店 3F 宴會廳 ｜ 300 位貴賓</div>
   </div>
   <div class="scroll-hint">SCROLL TO EXPLORE ↓</div>
@@ -447,5 +476,26 @@ const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.targe
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>50));
+</script>
+
+<script>
+(function(){
+  const videos = document.querySelectorAll('video.smart-loop');
+  videos.forEach(v => {
+    const start = parseFloat(v.dataset.loopStart || '5.5');
+    const end = parseFloat(v.dataset.loopEnd || '7.9');
+    let firstPlayDone = false;
+    v.addEventListener('ended', () => {
+      firstPlayDone = true;
+      v.currentTime = start;
+      v.play().catch(()=>{});
+    });
+    v.addEventListener('timeupdate', () => {
+      if (firstPlayDone && v.currentTime >= end) {
+        v.currentTime = start;
+      }
+    });
+  });
+})();
 </script>
 </body></html>
