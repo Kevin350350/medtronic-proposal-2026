@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>迎賓機台替代方案 · v4</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root { --navy:#0d1b2a; --navy-deep:#060e1a; --ice:#5fb9e0; --gold:#d4af37; --fog:#e8eef3; --dim:#8aa1b5; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:-apple-system,"PingFang TC","Noto Sans TC",sans-serif; background:var(--navy-deep); color:var(--fog); line-height:1.65; -webkit-font-smoothing:antialiased; }
+.hero {
+  min-height:55vh; padding:90px 60px 60px; display:flex; align-items:flex-end;
+  background:
+    radial-gradient(ellipse 80% 50% at 30% 30%, rgba(95,185,224,0.12), transparent),
+    radial-gradient(ellipse 50% 40% at 80% 70%, rgba(212,175,55,0.08), transparent),
+    linear-gradient(180deg, var(--navy-deep), var(--navy));
+  border-bottom:1px solid rgba(95,185,224,0.12);
+}
+.hero-inner { max-width:1100px; margin:0 auto; width:100%; }
+.tag { font-family:ui-monospace,Menlo,monospace; font-size:0.7rem; letter-spacing:0.35em; color:var(--ice); opacity:0.75; margin-bottom:1.2rem; }
+h1 { font-size:2.6rem; font-weight:700; letter-spacing:0.02em; line-height:1.15; color:#fff; }
+.sub { margin-top:0.9rem; font-size:0.95rem; color:var(--dim); }
+.container { max-width:1100px; margin:0 auto; padding:60px 60px 120px; }
+.verdict { background:rgba(212,175,55,0.06); border-left:3px solid var(--gold); padding:1.4rem 1.6rem; margin-bottom:56px; border-radius:2px; }
+.verdict h2 { font-size:1.05rem; letter-spacing:0.1em; color:var(--gold); margin-bottom:0.6rem; }
+.verdict p { font-size:1.02rem; color:var(--fog); }
+.highlight { color:var(--ice); font-weight:600; }
+.section-tag { font-family:ui-monospace,Menlo,monospace; font-size:0.68rem; letter-spacing:0.3em; color:var(--ice); opacity:0.75; margin-bottom:0.7rem; margin-top:40px; }
+h2.section-title { font-size:1.6rem; color:#fff; margin-bottom:1.4rem; letter-spacing:0.03em; }
+.section-intro { color:var(--dim); margin-bottom:1.8rem; font-size:0.95rem; }
+
+.card {
+  background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.012));
+  border:1px solid rgba(95,185,224,0.14); border-radius:3px; padding:1.8rem 1.8rem 1.6rem;
+  margin-bottom:1.2rem; display:grid; grid-template-columns:72px 1fr; gap:1.2rem; align-items:start;
+}
+.card .num { font-family:"Cormorant Garamond",Georgia,serif; font-size:3rem; line-height:1; color:var(--gold); font-weight:600; letter-spacing:-0.02em; }
+.card .body h3 { color:#fff; font-size:1.25rem; margin-bottom:0.3rem; letter-spacing:0.01em; }
+.card .body .label { font-family:ui-monospace,Menlo,monospace; font-size:0.62rem; letter-spacing:0.28em; color:var(--ice); margin-bottom:0.9rem; opacity:0.7; }
+.card .body .lead { font-size:1rem; color:var(--fog); margin-bottom:0.9rem; font-weight:500; }
+.card .body p { font-size:0.93rem; color:var(--dim); margin-bottom:0.7rem; }
+.meta { display:flex; flex-wrap:wrap; gap:0.5rem 1.4rem; font-family:ui-monospace,Menlo,monospace; font-size:0.72rem; color:var(--dim); margin-top:0.6rem; }
+.meta span strong { color:var(--fog); font-weight:500; }
+
+table.compare { width:100%; border-collapse:collapse; font-size:0.86rem; margin-top:1rem; }
+table.compare th, table.compare td { padding:0.75rem 0.9rem; border-bottom:1px solid rgba(95,185,224,0.1); text-align:left; vertical-align:top; }
+table.compare th { color:var(--ice); font-weight:500; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; background:rgba(95,185,224,0.04); }
+table.compare td { color:var(--fog); }
+table.compare td.dim { color:var(--dim); }
+table.compare td .tag-pill { display:inline-block; padding:2px 8px; border-radius:2px; font-size:0.7rem; font-family:ui-monospace,Menlo,monospace; background:rgba(212,175,55,0.12); color:var(--gold); }
+
+.combo { background:rgba(95,185,224,0.05); border:1px solid rgba(95,185,224,0.15); border-radius:3px; padding:1.4rem 1.6rem; margin-bottom:1rem; }
+.combo .title { color:var(--gold); font-size:0.75rem; letter-spacing:0.22em; margin-bottom:0.5rem; font-family:ui-monospace,Menlo,monospace; }
+.combo h4 { color:#fff; font-size:1.1rem; margin-bottom:0.5rem; }
+.combo p { color:var(--dim); font-size:0.92rem; }
+.combo .stars { color:var(--gold); letter-spacing:0.15em; font-size:0.8rem; margin-left:0.5rem; }
+
+.footer-note { margin-top:48px; padding-top:24px; border-top:1px solid rgba(95,185,224,0.1); font-size:0.82rem; color:var(--dim); font-family:ui-monospace,Menlo,monospace; letter-spacing:0.02em; }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="tag">ALTERNATIVES · v4</div>
+    <h1>迎賓機台替代方案<br>五選一覽</h1>
+    <div class="sub">2026-04-24 · 美敦力冬季運動會 · 前廳互動機台選項</div>
+  </div>
+</section>
+
+<div class="container">
+
+  <div class="verdict">
+    <h2>核心建議</h2>
+    <p>現行提案迎賓區 01「<span class="highlight">桌面冰壺 / 冰上曲棍球機台</span>」為起點，以下提供五個差異化替代方案，涵蓋<span class="highlight">沉浸模擬、AR 互動、AI 傳播、經典玩法、競技擂台</span>五條路徑。建議依空間與預算從組合建議中擇一配置；三台並設為黃金體驗密度。</p>
+  </div>
+
+  <div class="section-tag">01 · FIVE OPTIONS</div>
+  <h2 class="section-title">五個方案</h2>
+
+  <div class="card">
+    <div class="num">A</div>
+    <div class="body">
+      <div class="label">IMMERSIVE SIMULATOR</div>
+      <h3>雪地滑雪體感模擬器</h3>
+      <div class="lead">站上雪板，第一視角從阿爾卑斯山頂俯衝而下——冬奧氣氛瞬間拉滿</div>
+      <p>立姿彈性雪板平台 + 大型曲面螢幕第一人稱視角。物理回饋真實、無眩暈，視覺衝擊是全場最強。代表機種 SKYTECHSPORT / PROSKI Simulator，台灣有活動租賃供應商。</p>
+      <div class="meta">
+        <span>吞吐 <strong>3-5 分鐘/人</strong></span>
+        <span>排隊承載 <strong>中</strong></span>
+        <span>場地 <strong>約 3×3m</strong></span>
+        <span>預估 <strong>NT$80-150k</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="num">B</div>
+    <div class="body">
+      <div class="label">AR FLOOR PROJECTION</div>
+      <h3>AR 地面投影 · 互動冰壺 / 雪道</h3>
+      <div class="lead">不需實體冰面或實體機台，投影地上即可擲冰壺；多人同時破冰快</div>
+      <p>高流明投影機 + 體感感測器，以手勢或鞋底擲出冰壺或滑雪道避障。可切換多款冬季主題關卡。台灣供應商：艾爾普互動、Lumo Play 代理商。</p>
+      <div class="meta">
+        <span>吞吐 <strong>2-3 分鐘/組（2-4 人）</strong></span>
+        <span>排隊承載 <strong>高</strong></span>
+        <span>場地 <strong>約 4×3m</strong></span>
+        <span>預估 <strong>NT$50-90k</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="num">C</div>
+    <div class="body">
+      <div class="label">AI PHOTO BOOTH</div>
+      <h3>冬奧 AI Photo Booth · 即時換裝</h3>
+      <div class="lead">30 秒即成為冬奧選手——同仁拿到照片立即分享，品牌傳播力最強</div>
+      <p>AI 即時換裝（滑雪 / 速滑 / 花滑選手）+ 冬奧場館背景合成 + QR code 下載。吞吐極快，適合開場入場時段大量處理；照片疊加 Medtronic 品牌識別，傳播效率高。</p>
+      <div class="meta">
+        <span>吞吐 <strong>30-60 秒/人</strong></span>
+        <span>排隊承載 <strong>極高</strong></span>
+        <span>場地 <strong>約 2.5×2.5m</strong></span>
+        <span>預估 <strong>NT$40-70k</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="num">D</div>
+    <div class="body">
+      <div class="label">CLAW MACHINE · BRANDED</div>
+      <h3>冬奧限定 UFO Catcher · 金銀銅禮品分級</h3>
+      <div class="lead">零學習曲線，人人會玩；銅銀金三級獎品呼應主題，與摸彩無縫接續</div>
+      <p>機台外觀客製冰雪視覺 + 分級禮品（金區：品牌保溫瓶；銀區：品牌毯；銅區：品牌徽章鑰匙圈）。可接摸彩彩金系統——中獎者可再抽後段大獎，形成連貫劇本。</p>
+      <div class="meta">
+        <span>吞吐 <strong>1-2 分鐘/人</strong></span>
+        <span>排隊承載 <strong>高</strong></span>
+        <span>場地 <strong>約 1.5×1.5m</strong></span>
+        <span>預估 <strong>NT$30-60k（含客製外觀）</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="num">E</div>
+    <div class="body">
+      <div class="label">TOURNAMENT TABLE</div>
+      <h3>大型 Air Hockey 競技擂台 · 錦標賽制</h3>
+      <div class="lead">整晚持續產生賽事感——不只是暖場，是貫穿的副劇本</div>
+      <p>競賽級 Air Hockey 桌 + 即時記分螢幕。晚宴中段穿插 Bracket 淘汰賽，決賽安排在主舞台前。持續的「冬季運動會」比賽感與主題高度契合。</p>
+      <div class="meta">
+        <span>吞吐 <strong>3 分鐘/局</strong></span>
+        <span>排隊承載 <strong>中</strong></span>
+        <span>場地 <strong>約 2.5×4m</strong></span>
+        <span>預估 <strong>NT$40-80k（含記分系統）</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-tag">02 · COMPARISON MATRIX</div>
+  <h2 class="section-title">核心維度對比</h2>
+  <table class="compare">
+    <tr>
+      <th>維度</th>
+      <th>A · Ski Sim</th>
+      <th>B · AR 投影</th>
+      <th>C · Photo Booth</th>
+      <th>D · 爪機</th>
+      <th>E · Air Hockey</th>
+    </tr>
+    <tr><td>視覺衝擊</td><td><span class="tag-pill">★★★★★</span></td><td>★★★★</td><td>★★★</td><td>★★★</td><td>★★★</td></tr>
+    <tr><td>吞吐效率</td><td>★★★</td><td>★★★★</td><td><span class="tag-pill">★★★★★</span></td><td>★★★★</td><td>★★★</td></tr>
+    <tr><td>傳播力（社群分享）</td><td>★★★</td><td>★★★</td><td><span class="tag-pill">★★★★★</span></td><td>★★</td><td>★★★</td></tr>
+    <tr><td>主題契合度</td><td><span class="tag-pill">★★★★★</span></td><td>★★★★</td><td>★★★★</td><td>★★★</td><td>★★★★</td></tr>
+    <tr><td>與摸彩/劇本串接</td><td>★★</td><td>★★</td><td>★★★</td><td><span class="tag-pill">★★★★★</span></td><td>★★★★</td></tr>
+    <tr><td>預估成本（台）</td><td class="dim">NT$80-150k</td><td class="dim">NT$50-90k</td><td class="dim">NT$40-70k</td><td class="dim">NT$30-60k</td><td class="dim">NT$40-80k</td></tr>
+  </table>
+
+  <div class="section-tag">03 · RECOMMENDED COMBOS</div>
+  <h2 class="section-title">推薦組合</h2>
+
+  <div class="combo">
+    <div class="title">GOLD COMBO <span class="stars">★★★★★</span></div>
+    <h4>A + C + E｜沉浸 · 傳播 · 賽事感 三合一</h4>
+    <p>Ski Simulator 吸睛當門面、Photo Booth 負責社群擴散、Air Hockey 貫穿晚宴節奏。三站合計約 NT$160-300k，密度最完整。</p>
+  </div>
+
+  <div class="combo">
+    <div class="title">BRAND COMBO</div>
+    <h4>A + D｜視覺震撼 + 摸彩呼應</h4>
+    <p>滑雪模擬器當旗艦體驗，金銀銅爪機承接摸彩劇本。適合把預算集中在兩個亮點。</p>
+  </div>
+
+  <div class="combo">
+    <div class="title">LEAN COMBO</div>
+    <h4>B + C｜破冰 + 傳播</h4>
+    <p>AR 投影多人可玩解決排隊、Photo Booth 處理全員入場留影。預算緊湊時的首選。</p>
+  </div>
+
+  <div class="footer-note">
+    備註｜以上預估含機台租賃 / 客製外觀 / 現場支援；實際報價依供應商實勘決定。<br>
+    資料來源｜台灣活動機台供應商公開報價區間、過往類案預算推估。本頁為現場延伸討論用。
+  </div>
+
+</div>
+
+</body>
+</html>
